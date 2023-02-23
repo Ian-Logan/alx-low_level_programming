@@ -1,8 +1,5 @@
 #include "main.h"
 
-/* Function declaration for print_number */
-void print_number(int n);
-
 /**
  * main - check the code
  *
