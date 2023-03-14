@@ -1,31 +1,25 @@
-#include <stdlib.h>
 #include "main.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * free_grid - function declaration
- * @grid: 2 dimesional array
- * @height: the height
- * Return: void
+ * free_grid  - frees up a grid
+ * @grid: grid to check
+ * @height: height of grid
  */
-
-void free_grid(int **grid, int height);
-
-/**
- * free_grid - function definition
- * @grid: a 2D array
- * @height: the height of the array
- * Description: free up memory occupied
- * by a 2D array
- * Return: void
- */
-
 void free_grid(int **grid, int height)
 {
-	int index;
+	int i;
 
-	for (index = 0; index < height; index++)
+	if (height <= 0)
+		return;
+
+	if (grid == NULL)
+		return;
+
+	for (i = 0; i < height; i++)
 	{
-		free(grid[index]);
+		free(grid[i]);
 	}
+
 	free(grid);
 }
